@@ -10,10 +10,6 @@ class MiniTest::Spec
   include Webrat::Matchers
 
   Webrat.configure { |config| config.mode = :rack }
-
-  def mock_app
-    AssetsApp.tap { |app| }
-  end
 end
 
 module Webrat
