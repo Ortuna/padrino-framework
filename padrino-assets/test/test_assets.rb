@@ -30,8 +30,7 @@ describe 'Padrino::Assets' do
 
     it 'picks up require statements' do
       get '/assets/javascripts/app.js'
-      p last_response.body
-      assert_match 'var second_js_file;', last_response.body
+      assert_match 'var in_second_file;', last_response.body
     end
   end
 end
