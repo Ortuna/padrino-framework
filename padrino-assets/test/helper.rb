@@ -3,20 +3,17 @@ require File.join(File.dirname(__FILE__), '..', '..', 'padrino-core', 'test', 'm
 require 'rack/test'
 require 'webrat'
 require 'padrino-helpers'
-require 'active_support/time'
 
 class MiniTest::Spec
-  include Padrino::Helpers::OutputHelpers
-  include Padrino::Helpers::TagHelpers
-  include Padrino::Helpers::AssetTagHelpers
   include Rack::Test::Methods
   include Webrat::Methods
   include Webrat::Matchers
 
-  Webrat.configure do |config|
-    config.mode = :rack
-  end
+  Webrat.configure { |config| config.mode = :rack }
 
+  def mock_app
+    AssetsApp.tap { |app| }
+  end
 end
 
 module Webrat
