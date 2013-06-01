@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.add_dependency("padrino-gen",     Padrino.version)
   s.add_dependency("padrino-cache",   Padrino.version)
   s.add_dependency("padrino-admin",   Padrino.version)
+  s.add_dependency("padrino-assets",   Padrino.version)
 end
