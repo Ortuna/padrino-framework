@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rdoc_options  = ["--charset=UTF-8"]
 
-  s.add_dependency("sprockets", "~> 0.11.0")
-  s.add_dependency("uglifier", "~> 0.17.0")
+  s.add_dependency("sprockets", "~> 2.2.0")
+  s.add_dependency("uglifier", "~> 2.1.0")
 end
