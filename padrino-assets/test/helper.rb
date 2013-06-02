@@ -10,6 +10,16 @@ class MiniTest::Spec
   include Webrat::Matchers
 
   Webrat.configure { |config| config.mode = :rack }
+
+  def mock_app(base=Padrino::Application, &block)
+    @app = Sinatra.new(base, &block)
+    @app.set :logging, false
+    @app.set :padrino_logging, false
+  end
+
+  def rack_app
+    Rack::Lint.new(@app)
+  end  
 end
 
 module Webrat
